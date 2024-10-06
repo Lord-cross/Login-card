@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>login Card</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <!-- Global container -->
+        <div
+            class="global w-full md:min-h-screen bg-gradient-to-r from-fuchsia-500 to-fuchsia-300 flex justify-center items-center">
+            <!-- Login Container -->
+            <div
+                class="login-container lg:h-[36rem] rounded-lg bg-white md:overflow-hidden relative z-0 m-6 md:m-9 flex md:flex-row flex-col justify-center items-stretch md:space-y-0 space-y-4">
+                <div
+                    class="close-btn cursor-pointer md:top-4 top-5 md:right-3 right-4 z-10 absolute w-8 h-8 flex justify-center items-center p-2 bg-fuchsia-300 border border-fuchsia-800 rounded-full">
+                    <img
+                        src="asset/close.png"
+                        alt>
+                </div>
+
+                <!-- left Side -->
+                <div
+                    class="left-side md:self-stretch z-0 p-7 lg:px-10 py-5 lg:py-8 md:rounded-e-none rounded-lg bg-white flex flex-col justify-center items-start space-y-3">
+                    <!-- Top card -->
+                    <h2 class="font-bold ml-2 text-3xl">Log in</h2>
+                    <p class="text-zinc-500 tracking-wide pl-2">Log in to your
+                        account to upload or
+                        download pictures, videos or
+                        music. </p>
+                    <!-- Inputs -->
+                    <div
+                        class="input-container flex flex-col justify-center items-start w-full">
+                        <!-- Email -->
+                        <div class="email w-full p-2">
+                            <label class="font-bold text-zinc-700 ml-2"
+                                for="email-inp">E-mail</label>
+                            <input id="email-inp"
+                                class="focus:outline-none shadow-md my-2 border border-zinc-400 rounded-md p-2 px-5 w-full focus:border-zinc-500"
+                                type="email"
+                                placeholder="Enter your e-mail"
+                                autocomplete="off">
+                        </div>
+                        <!-- password -->
+                        <div class="password w-full p-2">
+                            <label class="font-bold text-zinc-700 ml-2"
+                                for="pass-inp">Password</label>
+                            <div tabindex="1"
+                                class="pass-container shadow-md w-full rounded-md flex justify-between items-center my-2 border border-zinc-400 focus:border-zinc-500">
+                                <input id="pass-inp"
+                                    class="focus:outline-none px-3 w-full"
+                                    type="password"
+                                    placeholder="Enter your password">
+                                <img id="vision"
+                                    class="w-7 h-7 cursor-pointer m-2"
+                                    src="asset/vision-0.png" alt="vissible">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Links -->
+                    <div
+                        class="links-container px-2 w-full flex justify-between items-center">
+                        <a href="#"
+                            class="text-zinc-800 font-semibold hover:underline">Forgot
+                            password
+                            ?</a>
+                        <div
+                            class="btn-container flex pr-10 justify-start items-center bg-fuchsia-200 rounded-lg p-2 border border-fuchsia-800 cursor-pointer group">
+                            <button class="font-bold px-3">Next
+                            </button>
+                            <img
+                                class="h-8 w-8 group-hover:translate-x-6 duration-150"
+                                src="asset/arrow.png"
+                                alt>
+                        </div>
+                    </div>
+                    <!-- Border -->
+                    <div
+                        class="border-b mx-auto border-b-slate-400 pt-7 w-10/12"></div>
+                    <p class="text-zinc-400 pb-3 text-center w-full">or login
+                        with</p>
+                    <!-- Icons -->
+                    <div
+                        class="icon-container flex flex-col md:flex-row w-full justify-center items-center space-y-4 md:space-y-0 md:space-x-3">
+                        <div
+                            class="github p-2 cursor-pointer border border-fuchsia-900 rounded-lg hover:shadow-xl hover:-translate-y-2 duration-150 w-full flex justify-center items-center space-x-2">
+                            <img class="h-8 w-8" src="asset/github.png" alt>
+                            <p class="font-semibold tracking-wide">Github</p>
+                        </div>
+                        <div
+                            class="google p-2 cursor-pointer w-full border border-fuchsia-900 rounded-lg hover:shadow-xl hover:-translate-y-2 duration-150 flex justify-center items-center space-x-2">
+                            <img class="h-8 w-8" src="asset/google.png" alt>
+                            <p class="font-semibold tracking-wide">google</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side -->
+                <div
+                    class="right-side w-[430px] self-stretch hidden md:block z-0">
+                    <img class="w-full rounded-e-lg h-full object-cover"
+                        src="asset/img-card.jpg"
+                        alt>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS codes -->
+        <script>
+            let passInp = document.querySelector('#pass-inp');
+            let Vision = document.querySelector('#vision');
+            let visible = 0;
+            Vision.addEventListener('click' , () => {
+                if (visible === 0) {
+                    Vision.src = `asset/vision-1.png`;
+                    visible = 1;
+                    passInp.type = 'text'
+                } else {
+                    Vision.src = `asset/vision-0.png`;
+                    visible = 0;
+                    passInp.type = 'password'
+                }
+            })
+        </script>
+    </body>
+</html>
